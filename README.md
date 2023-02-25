@@ -10,3 +10,6 @@
 # Блок-схема размещена в файле:
 
 Itogdiagram.drawio
+
+![Блок схема](Block-Shema.png)
+
