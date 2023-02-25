@@ -9,7 +9,8 @@
 
 # Блок-схема размещена в файле:
 
-Itogdiagram.drawio
+    Itogdiagram.drawio
 
 ![Блок схема](Block-Shema.png)
 
+    Программа Решения задачи расположена в файле Task1
