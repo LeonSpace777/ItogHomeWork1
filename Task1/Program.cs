@@ -1,24 +1,38 @@
-﻿string[] array1 = new string[5] {"234", "23", "hello", "world", "res"};
-string[] array2 = new string[array1.Length];
-void SecondArrayWithIF(string[] array1, string[] array2)
-{
-    int count = 0;
-    for (int i = 0; i < array1.Length; i++)
-    {
-    if(array1[i].Length <= 3)
-        {
-        array2[count] = array1[i];
-        count++;
+﻿using System;
+using static System.Console;
+
+Clear();
+
+string[] array = AskArray();
+string[] result = FindLessThan(array, 3);
+WriteLine($"[{string.Join(", ", array)}] -> [{string.Join(", ", result)}]");
+
+string[] FindLessThan(string[] input, int n) {
+    string[] output = new string[CountLessThan(input, n)];
+
+    for(int i = 0, j = 0; i < input.Length; i++) {
+        if(input[i].Length <= n) {
+            output[j] = input[i];
+            j++;
         }
     }
+
+    return output;
 }
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
+
+int CountLessThan(string[] input, int n) {
+    int count = 0;
+
+    for(int i = 0; i < input.Length; i++) {
+        if(input[i].Length <= n) {
+            count++;
+        }
     }
-    Console.WriteLine();
+
+    return count;
 }
-SecondArrayWithIF(array1, array2);
-PrintArray(array2);
+
+string[] AskArray() {
+    Write("Введите значения через пробел: ");
+    return ReadLine().Split(" ");
+}
